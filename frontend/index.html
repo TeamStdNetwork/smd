@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMD - Universal High-Speed Media Downloader</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .glow-bg {
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.18) 0%, rgba(15, 23, 42, 0) 70%);
+    }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-100 min-h-screen flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800/80 bg-[#0b0f19]/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center font-extrabold text-white text-xl shadow-lg shadow-indigo-500/25">
+          ⚡
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent">SMD</span>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-indigo-400 ml-1.5 px-2 py-0.5 rounded-full bg-indigo-500/10 border border-indigo-500/20">v1.0</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 text-sm font-medium">
+        <a href="https://github.com/TeamStdNetwork/smd" target="_blank" class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700/60 transition text-slate-300 hover:text-white">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="flex-1 glow-bg">
+    <div class="max-w-4xl mx-auto px-4 pt-16 pb-12 text-center">
+      
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Zero-Disk Stream Engine • Powered by StdAPI
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        Download Videos from <br class="hidden sm:inline"/>
+        <span class="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">Any Social Platform</span>
+      </h1>
+      <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10">
+        Instagram Reels, YouTube 4K, TikTok without watermark, Twitter/X, and 1,800+ sites. Fast, free, and privacy-protected.
+      </p>
+
+      <!-- Input Card -->
+      <div class="glass-card rounded-2xl p-3 sm:p-4 shadow-2xl max-w-2xl mx-auto mb-6">
+        <div class="flex flex-col sm:flex-row items-center gap-2">
+          
+          <div class="relative w-full flex-1">
+            <input 
+              id="urlInput"
+              type="url" 
+              placeholder="Paste social media video link here..." 
+              class="w-full bg-slate-900/90 text-white placeholder-slate-500 px-4 py-3.5 rounded-xl border border-slate-700/60 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 text-sm sm:text-base transition pr-20"
+            />
+            <button 
+              id="pasteBtn"
+              type="button" 
+              class="absolute right-2 top-1/2 -translate-y-1/2 px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-medium text-slate-300 hover:text-white transition flex items-center gap-1 border border-slate-700"
+            >
+              📋 Paste
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2 w-full sm:w-auto">
+            <select id="formatSelect" class="bg-slate-900 border border-slate-700 text-slate-200 text-sm font-medium rounded-xl px-3 py-3.5 focus:outline-none focus:border-indigo-500">
+              <option value="mp4">MP4 Video</option>
+              <option value="mp3">MP3 Audio</option>
+            </select>
+
+            <button 
+              id="downloadBtn"
+              class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 font-semibold text-white shadow-lg shadow-indigo-600/30 transition transform active:scale-95 flex items-center justify-center gap-2 min-w-[120px]"
+            >
+              <span id="btnText">Fetch</span>
+              <svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Error Msg -->
+        <div id="errorMsg" class="hidden mt-3 p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs text-left"></div>
+      </div>
+
+      <!-- Result Card -->
+      <div id="resultCard" class="hidden glass-card rounded-2xl p-5 max-w-2xl mx-auto text-left shadow-2xl transition-all">
+        <div class="flex flex-col sm:flex-row gap-5 items-start">
+          <div class="relative w-full sm:w-44 h-48 sm:h-32 rounded-xl overflow-hidden bg-slate-900 flex-shrink-0 border border-slate-700/60">
+            <img id="mediaThumb" src="" alt="Thumbnail" class="w-full h-full object-cover">
+            <span id="mediaPlatform" class="absolute top-2 left-2 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-black/70 text-white backdrop-blur-sm"></span>
+          </div>
+
+          <div class="flex-1 flex flex-col justify-between w-full h-full min-h-[120px]">
+            <div>
+              <h3 id="mediaTitle" class="text-base font-bold text-white line-clamp-2 mb-1"></h3>
+              <p id="mediaDuration" class="text-xs text-slate-400 mb-4"></p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5">
+              <a 
+                id="directDownloadLink" 
+                href="#" 
+                target="_blank" 
+                rel="noreferrer"
+                class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 font-semibold text-white text-xs sm:text-sm shadow-lg shadow-emerald-600/25 transition flex items-center gap-2"
+              >
+                ⬇️ Download Now
+              </a>
+              <button 
+                id="copyLinkBtn" 
+                class="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs sm:text-sm font-medium text-slate-300 hover:text-white transition"
+              >
+                🔗 Copy Direct URL
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Platforms Grid -->
+      <div class="mt-16 pt-10 border-t border-slate-800/60">
+        <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-6">Supported Social Media Platforms</p>
+        <div class="flex flex-wrap items-center justify-center gap-6 text-slate-400 text-sm font-medium">
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">📸 Instagram</div>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">▶️ YouTube (4K)</div>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">🎵 TikTok (No WM)</div>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">🐦 Twitter / X</div>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">📌 Pinterest</div>
+          <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/40 border border-slate-800">📘 Facebook</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/80 bg-[#090d15] py-8 text-center text-xs text-slate-500">
+    <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        Licensed under <a href="https://github.com/TeamStdNetwork/STD-PUBLIC-LICENSE" target="_blank" class="text-indigo-400 hover:underline">STD-PL-1.0</a>. Crafted by <b>TeamStdNetwork</b>.
+      </div>
+      <div class="text-[11px] text-slate-600">
+        Disclaimer: For personal educational backup and fair-use purposes only.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const urlInput = document.getElementById('urlInput');
+    const pasteBtn = document.getElementById('pasteBtn');
+    const formatSelect = document.getElementById('formatSelect');
+    const downloadBtn = document.getElementById('downloadBtn');
+    const btnText = document.getElementById('btnText');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const errorMsg = document.getElementById('errorMsg');
+    const resultCard = document.getElementById('resultCard');
+    const mediaThumb = document.getElementById('mediaThumb');
+    const mediaPlatform = document.getElementById('mediaPlatform');
+    const mediaTitle = document.getElementById('mediaTitle');
+    const mediaDuration = document.getElementById('mediaDuration');
+    const directDownloadLink = document.getElementById('directDownloadLink');
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
+
+    // Clipboard Paste Handler
+    pasteBtn.addEventListener('click', async () => {
+      try {
+        const text = await navigator.clipboard.readText();
+        urlInput.value = text;
+      } catch (err) {
+        alert('Please grant clipboard permissions to paste.');
+      }
+    });
+
+    // Extraction Handler
+    downloadBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim();
+      if (!url) {
+        showError('Please enter a valid video link.');
+        return;
+      }
+
+      hideError();
+      resultCard.classList.add('hidden');
+      setLoading(true);
+
+      try {
+        const res = await fetch('/api/extract', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: url, format: formatSelect.value })
+        });
+
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.detail || 'Could not fetch media. Check URL and try again.');
+        }
+
+        renderResult(data);
+      } catch (err) {
+        showError(err.message || 'Failed to connect to extraction backend.');
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    function renderResult(data) {
+      mediaTitle.innerText = data.title || 'Extracted Media';
+      mediaPlatform.innerText = data.platform || 'Media';
+      mediaThumb.src = data.thumbnail || 'https://via.placeholder.com/320x180?text=No+Preview';
+      mediaDuration.innerText = data.duration ? `Duration: ${Math.round(data.duration)}s` : '';
+      directDownloadLink.href = data.download_url;
+      
+      copyLinkBtn.onclick = () => {
+        navigator.clipboard.writeText(data.download_url);
+        copyLinkBtn.innerText = '✅ Copied!';
+        setTimeout(() => { copyLinkBtn.innerText = '🔗 Copy Direct URL'; }, 2000);
+      };
+
+      resultCard.classList.remove('hidden');
+    }
+
+    function setLoading(isLoading) {
+      if (isLoading) {
+        btnText.classList.add('hidden');
+        btnSpinner.classList.remove('hidden');
+        downloadBtn.disabled = true;
+      } else {
+        btnText.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+        downloadBtn.disabled = false;
+      }
+    }
+
+    function showError(msg) {
+      errorMsg.innerText = msg;
+      errorMsg.classList.remove('hidden');
+    }
+
+    function hideError() {
+      errorMsg.classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
